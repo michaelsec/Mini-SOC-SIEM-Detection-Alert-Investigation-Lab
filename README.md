@@ -1,38 +1,49 @@
-# Mini-SOC-SIEM-Detection-Alert-Investigation-Lab
-This project simulates a small Security Operations Center environment. It demonstrates how to collect logs, create detection rules, triage alerts, and investigate suspicious activity using a SIEM. The focus is on defensive monitoring and SOC workflows.
+# Mini SOC Lab – SIEM Detection & Alert Investigation
 
-Tools:
-ELK/Wazuh, Windows, Linux
+This project simulates a small Security Operations Center (SOC) environment.  
+It demonstrates how logs are collected, detections are created, alerts are triaged, and investigations are documented using a SIEM.
 
-Logs used:
-Windows authentication logs
-Linux auth logs
-Network traffic
+The goal is to show real SOC workflows, not just tool usage.
 
-Detections:
-Failed login detection
-Brute-force login detection
-Privilege escalation detection
+---
 
+## What This Project Shows
+- SIEM log ingestion and monitoring  
+- Detection engineering fundamentals  
+- Alert triage and investigation  
+- Incident documentation  
+- Defensive security mindset  
 
-Core Project Tasks:
+---
 
-Detection 1 – Failed Login Alert
-Trigger when:
-More than 5 failed logins in 2 minutes
-Same username or same IP
+## Tools Used
+- ELK Stack / Wazuh  
+- Windows VM  
+- Linux VM  
 
-Document:
-What log field you used
-Why this matters
-Example screenshot
+---
 
-Detection 2 – Brute Force Behavior
-Trigger when:
-Multiple usernames from one IP
-Short time window
+## 📊 Log Sources
+- Windows Security Event Logs (Event ID 4624, 4625, 4672)  
+- Linux Authentication Logs (`/var/log/auth.log`)  
+- SSH and sudo activity  
 
-Detection 3 – Privilege Escalation
-Trigger when:
-Windows Event ID 4672
-Or sudo usage in Linux logs
+---
+
+## Detections Implemented
+
+| Detection | Description |
+|--------|------------|
+| Failed Login Detection | Detects repeated authentication failures against a single account |
+| Brute Force Detection | Detects multiple usernames being attacked from a single IP |
+| Privilege Escalation Detection | Detects high-risk privilege usage (Windows & Linux) |
+
+Detection documentation:
+- `detection-rules/failed_login_detection.md`
+- `detection-rules/brute_force_detection.md`
+
+---
+
+## Example Investigation
+A full SOC-style alert triage example can be found here:
+investigation-notes/alert-triage-example.md
