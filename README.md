@@ -23,7 +23,7 @@ The goal is to show real SOC workflows, not just tool usage.
 
 ---
 
-## 📊 Log Sources
+## Log Sources
 - Windows Security Event Logs (Event ID 4624, 4625, 4672)  
 - Linux Authentication Logs (`/var/log/auth.log`)  
 - SSH and sudo activity  
